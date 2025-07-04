@@ -1,12 +1,19 @@
+import pyfiglet
 import random
 import os
 
 def game():
     os.system("clear")
 
-    print("-----------------------------------------------------")
+    
 
-    print("Welcome to GUESS THE NUMBER game")
+    print("="*80)
+
+    print(pyfiglet.figlet_format("GUESS THE NUMBER GAME"))
+
+    print("="*80)
+
+
 
     start = int(input("Enter starting number: "))
     end = int(input("Enter ending number: "))
@@ -24,17 +31,16 @@ def game():
         answer = int(input("Enter your guess: "))
 
         if answer > guess:
-            print("you guess high")
+            print("your guess is high")
 
         elif answer < guess:
-            print("you guess low")
-
-        else:
-            print("correct")
+            print("your guess is low")
 
         count = count + 1
     
     os.system("clear")
+
+    print("Your guess is correct: ",answer)
 
     print(f"No. of attempts: {count}")
 
@@ -63,5 +69,6 @@ def game():
 
 
 
-game()
+if __name__ == "__main__":
+    game()
 
