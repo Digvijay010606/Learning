@@ -1,43 +1,44 @@
+# importing all the required libraries
+
 import pyfiglet
 import random
 import os
-from rich.progress import track
 import time
 from colorama import Fore, Back, Style, init
 
+# initilising the colorama
 
 init()
 
+# defining the game function
+
 def game():
+
+    text = "GUESS THE NUMBER"
+
+    terminal_width = os.get_terminal_size().columns
+
+    ascii_art = pyfiglet.figlet_format(text)
+
+    lines = ascii_art.splitlines()
+
     os.system("clear")
 
-    
-    print(pyfiglet.figlet_format("GUESS THE NUMBER GAME"))
+    for line in lines:
+        centered_line = line.center(terminal_width)
+        print(centered_line)
 
     print("\n\n\n\n\n")
-
-    for step in track(range(100), description="Loading Game..."):
-        time.sleep(0.01)
+    input(Fore.YELLOW + "Press <ENTER> to continue".center(terminal_width) + Style.RESET_ALL)
 
     os.system("clear")
 
-    print(pyfiglet.figlet_format("GUESS THE NUMBER GAME"))
-
-    print("\n\n\n\n\n")
-    input(Fore.YELLOW + "Press <ENTER> to continue".center(80) + Style.RESET_ALL)
-
-
-    # game logic starts from here
-
-    os.system("clear")
+    # game logic starts here
 
     start = int(input("Enter the first number of the guessing range: "))
     end = int(input("Enter the last number of the guessing range: "))
-     
-    
-    
+      
     count = 0
-    
 
     guess = random.randint(start, end)
 
@@ -83,8 +84,7 @@ def game():
 
 
 
-
-# for better and reuseable code
+# this is the execution of the main program
 
 if __name__ == "__main__":
     game()
