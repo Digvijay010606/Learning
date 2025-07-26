@@ -1,4 +1,5 @@
 import random
+import os
 
 
 def guess_the_number():
@@ -9,9 +10,14 @@ def guess_the_number():
     max_attempts = 10
     score = 100 # starting score
 
-    print("Welcome to the Guess the Number Game!")
+    os.system("clear")
+
+    print("Welcome to the Guess the Number Game!\n")
+    print("-"*40)
     print("I'm thinking of a number between 1 and 100.")
-    print(f"You have {max_attempts} attempts to guess the number.")
+    print(f"You have {max_attempts} attempts to guess the number.\n")
+    print("-"*40)
+
 
     while attempts < max_attempts:
         try:
@@ -29,8 +35,10 @@ def guess_the_number():
                 print("Too high! Try again.")
                 score -= 10 # decrease score for each incorrect guess
             else:
+                print("-"*40)
                 print(f"Congratulations! You've guessed the number {number_to_guess} in {attempts} attempts!")
                 print(f"Your score is: {score}")
+                print("-"*40)
                 break
         except ValueError:
             print("Please enter a valid integer.")
