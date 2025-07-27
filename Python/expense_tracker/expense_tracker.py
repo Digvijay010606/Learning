@@ -6,10 +6,16 @@ import os
 def income_calculator() -> None :
 
     os.system("clear")
-    
-    monthly_income: float = float(input("Ener your monthly income: "))
-    tax_rate: float =  float(input("Enter the tax rate: "))
-    currency: str = input("Enter the currency: ")
+
+    while True:
+        try:
+            monthly_income: float = float(input("Enter your monthly income: "))
+            tax_rate: float = float(input("Enter the tax rate(%): "))
+            currency: str = input("Enter the currency: ")
+            break
+
+        except ValueError:
+            print("Please! enter correct input")
 
     yearly_income: float = monthly_income * 12
 
@@ -20,13 +26,14 @@ def income_calculator() -> None :
     yearly_net_income: float = monthly_net_income * 12
 
     print("-" * 40)
-    print(f"Yearly income: {currency} {yearly_income}")
+    print("Income calculation".center(40))
+    print(f"\nYearly income: {currency} {yearly_income}")
     print(f"Monthly tax: {currency} {monthly_tax}")
     print(f"Yearly tax: {currency} {yearly_tax}")
     print(f"Monthly in-hand income: {currency} {monthly_net_income}")
     print(f"Yearly in-hand income: {currency} {yearly_net_income}")
     print("-" * 40)
-     
+
 
 
 
