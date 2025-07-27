@@ -12,6 +12,10 @@ def income_calculator() -> None :
             monthly_income: float = float(input("Enter your monthly income: "))
             tax_rate: float = float(input("Enter the tax rate(%): "))
             currency: str = input("Enter the currency: ")
+            print("Now add some basic expenses")
+            rent: float = float(input("Enter your house rent: "))
+            food: float = float(input("Enter your food cost: "))
+            travel: float = float(input("Enter your travel cost: "))
             break
 
         except ValueError:
@@ -33,9 +37,15 @@ def income_calculator() -> None :
     print(f"Monthly in-hand income: {currency} {monthly_net_income}")
     print(f"Yearly in-hand income: {currency} {yearly_net_income}")
     print("-" * 40)
-
-
-
+    
+    print("Your expenses".center(40))
+    print(f"\nHouse rent: {currency} {rent}")
+    print(f"Food cost: {currency} {food}")
+    print(f"Travel cost: {currency} {travel}\n")
+    print("-"*40)
+    print(f"Money left monthly: {monthly_net_income - rent + food + travel}")
+    print(f"Money left yearly: {yearly_net_income - ((rent + food + travel) * 12)}")
+    print("-"*40)
 
 
 if __name__ == "__main__":
