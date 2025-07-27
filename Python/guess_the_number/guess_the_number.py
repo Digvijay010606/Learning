@@ -40,7 +40,7 @@ def guess_the_number():
                 print(f"Your score is: {score}")
                 print("-"*40)
                 break
-        except ValueError:
+        except Exception:
             print("Please enter a valid integer.")
     if attempts == max_attempts:
         print(f"Sorry, you've used all your attempts. The number was: {number_to_guess}")
