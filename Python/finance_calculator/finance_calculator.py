@@ -3,7 +3,7 @@ from currency_formatting import format_currency
 import os
 
 
-def income_calculator() -> None :
+def finance_calculator() -> None :
 
     os.system("clear")
 
@@ -49,5 +49,5 @@ def income_calculator() -> None :
 
 
 if __name__ == "__main__":
-    income_calculator()
+    finance_calculator()
 

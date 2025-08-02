@@ -9,7 +9,3 @@ def format_currency(num):
         result += rev[i]
 
     return result[::-1]  # Reverse back to normal
-
-# Example
-print(format_currency(1000000))   # Output: 1,000,000
-print(format_currency(987654321)) # Output: 987,654,321
