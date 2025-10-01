@@ -1,3 +1,4 @@
+#this is for formatting the currency used in the finance calculator
 def format_currency(num):
     num_str = str(num)
     rev = num_str[::-1]   # Reverse the string
